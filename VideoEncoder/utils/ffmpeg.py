@@ -208,11 +208,13 @@ async def encode(filepath, message, msg):
 
 
     ffmpeg_filter = ':'.join([
-        'drawtext=fontfile=/app/bot/utils/watermark/font.ttf',
+        'drawtext=fontfile=/app/bot/utils/extras/sezz.otf',
         f"text='Anime Orbit'",
         f'fontcolor=white',
         'fontsize=main_h/20',
-        f'x=10:y=10'
+        f'x=10:y=h-th-10',
+        "enable='between(t, 1, 59)'",
+        "alpha='if(between(t,1,59), 0.8, 0)'"
     ])
 
     # Watermark and Resolution
